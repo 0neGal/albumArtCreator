@@ -1,16 +1,17 @@
 /* Copyrighted by 0neGuyDev */
 
 :root {
-	--artbg: red;
 	--artsize: 60vw;
 	--topinset: 30px;
 	--bottominset: 100px;
 	--shadowamount: 40px;
 	--activecolor: #a29bfe;
 	--inactivecolor: #dfe6e9;
+	--artbg: var(--activecolor);
 }
 
 body {
+	font-weight: 700;
 	font-family: SFPro;
 }
 
@@ -19,7 +20,10 @@ body {
 	overflow: auto;
 	border-radius: 20px;
 	width: var(--artsize);
+	-ms-user-select: none;
 	height: var(--artsize);
+	-moz-user-select: none;
+	-webkit-user-select: none;
 	margin-top: var(--topinset);
 	margin-bottom: var(--bottominset);
 }
@@ -58,8 +62,10 @@ body {
 	font-size: 20px;
 	background: none;
 	padding-left: 5%;
+	font-weight: 700;
+	font-family: SFPro;
 }
 
 .input:focus-within {
-	border: 5px solid var(--activecolor)
+	border: 5px solid var(--activecolor);
 }
