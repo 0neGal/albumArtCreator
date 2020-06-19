@@ -5,29 +5,7 @@ document.addEventListener("keyup", (e) => {
 })
 
 function updateText() {
-	if (notEmpty(bigTitleInput.value)) {
-		bigTitle.innerHTML = bigTitleInput.value
-	} else {
-		bigTitle.innerHTML = "Big Title"
-	}
-	
-	if (notEmpty(subTitleInput.value)) {
-		subTitle.innerHTML = subTitleInput.value
-	} else {
-		subTitle.innerHTML = "Sub Title"
-	}
-	
-	if (notEmpty(subTextInput.value)) {
-		subText.innerHTML = subTextInput.value
-	} else {
-		subText.innerHTML = "Sub Text"
-	}
-}
-
-function notEmpty(variable) {
-	if (variable.replace(/ /g, "") !== "") {
-		return true
-	} else {
-		return false
-	}
+	subText.innerHTML = subTextInput.value
+	bigTitle.innerHTML = bigTitleInput.value
+	subTitle.innerHTML = subTitleInput.value
 }
