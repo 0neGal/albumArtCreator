@@ -23,15 +23,20 @@
 		</div>
 		
 		<div class="input">
-			<input id="bigTitleInput" placeholder="Big Title...">
+			<input id="bigTitleInput" placeholder="Big Title..." value="Big Title">
 		</div>
 		<div class="input">
-			<input id="subTitleInput" placeholder="Sub Title...">
+			<input id="subTitleInput" placeholder="Sub Title..." value="Sub Title">
 		</div>
 		<div class="input">
-			<input id="subTextInput" placeholder="Sub Text...">
+			<input id="subTextInput" placeholder="Sub Text..." value="Sub Text">
 		</div>
-		<div class="button">Generate</div>
+		<div class="button" onclick="generate()">Generate</div>
+		
+		<div id="modal" class="active">
+			<div class="button bottom" onclick="toggleModal()">Done</div>
+		</div>
+		<div id="darkener" onclick="toggleModal()"></div>
 		
 		<div class="copyright">This website is not owned by Apple<br>Apple Music is a trade mark of Apple<br>I don't own the rights to their logos or names!<br><br>Website Copyright©: 0neGuyDev</div>
 		

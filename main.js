@@ -9,3 +9,11 @@ function updateText() {
 	bigTitle.innerHTML = bigTitleInput.value
 	subTitle.innerHTML = subTitleInput.value
 }
+
+function generate() {
+	toggleModal();
+}
+
+function toggleModal() {
+	modal.toggleAttribute("active");
+}

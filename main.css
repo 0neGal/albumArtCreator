@@ -21,13 +21,11 @@ body {
 	cursor:default;
 	margin: 0 auto;
 	overflow: auto;
+	user-select: none;
 	position: relative;
 	border-radius: 20px;
 	width: var(--artsize);
-	-ms-user-select: none;
 	height: var(--artsize);
-	-moz-user-select: none;
-	-webkit-user-select: none;
 	margin-top: var(--topinset);
 	margin-bottom: var(--bottominset);
 	transition: 0.3s transform ease-in-out;
@@ -38,10 +36,14 @@ body {
 }
 
 #art {
+	user-select:none;
 	width: var(--artsize);
+	-ms-user-select: none;
+	-moz-user-select: none;
 	height: var(--artsize);
 	background: var(--artbg);
 	background-size: contain;
+	-webkit-user-select: none;
 }
 
 #artShadow {
@@ -73,7 +75,12 @@ body {
 }
 
 .button {
+	cursor:pointer;
+	user-select:none;
 	text-align: center;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 	line-height: var(--uiheight);
 	background: var(--inactivecolor);
 	transition: 0.3s background ease-in-out;
@@ -81,6 +88,12 @@ body {
 
 .button:active {
 	background: var(--activecolor);
+}
+
+.button.bottom {
+	bottom: 20px;
+	position: absolute;
+	left: calc(50vw - 80vw / 2);
 }
 
 .input input {
@@ -122,14 +135,14 @@ body {
 }
 
 #subTitle {
-	top:92px;
+	top:95px;
 	left: 25px;
 	font-size: 40px;
 	font-weight: 300;
 }
 
 #subText {
-	top: 232px;
+	top: 230px;
 	left: 25px;
 	font-size: 12px;
 	font-weight: 500;
@@ -144,4 +157,40 @@ body {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-image: url(aplMusic.png);
+}
+
+#modal {
+	z-index: 10;
+	top: 110vh;
+	width: 100vw;
+	height: 95vh;
+	background: white;
+	position: fixed;
+	transform: scale(0.97);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	box-shadow: 0px -15px 20px rgba(0,0,0,0.05);
+	transition: 0.3s top ease-in-out, 0.4s transform ease-in-out;
+}
+
+#modal[active] {
+	top: 5%;
+	transform: scale(1.0);
+}
+
+#darkener {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 9;
+	position: fixed;
+	background: none;
+	pointer-events: none;
+	transition: 0.3s background ease-in-out;
+}
+
+#modal[active] + #darkener {
+	pointer-events: auto;
+	background: rgba(0,0,0,0.8);
 }
