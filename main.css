@@ -194,3 +194,9 @@ body {
 	pointer-events: auto;
 	background: rgba(0,0,0,0.8);
 }
+
+#modal .text {
+	margin: 0 auto;
+	width: 80vw;
+	margin-top: 50px;
+}
