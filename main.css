@@ -18,6 +18,7 @@ body {
 }
 
 #artDiv {
+	cursor:default;
 	margin: 0 auto;
 	overflow: auto;
 	position: relative;
@@ -29,6 +30,11 @@ body {
 	-webkit-user-select: none;
 	margin-top: var(--topinset);
 	margin-bottom: var(--bottominset);
+	transition: 0.3s transform ease-in-out;
+}
+
+#artDiv:active {
+	transform:scale(0.99);
 }
 
 #art {
