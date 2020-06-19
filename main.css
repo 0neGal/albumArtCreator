@@ -1,0 +1,65 @@
+/* Copyrighted by 0neGuyDev */
+
+:root {
+	--artbg: red;
+	--artsize: 60vw;
+	--topinset: 30px;
+	--bottominset: 100px;
+	--shadowamount: 40px;
+	--activecolor: #a29bfe;
+	--inactivecolor: #dfe6e9;
+}
+
+body {
+	font-family: SFPro;
+}
+
+#artDiv {
+	margin: 0 auto;
+	overflow: auto;
+	border-radius: 20px;
+	width: var(--artsize);
+	height: var(--artsize);
+	margin-top: var(--topinset);
+	margin-bottom: var(--bottominset);
+}
+
+#art {
+	width: var(--artsize);
+	height: var(--artsize);
+	background: var(--artbg);
+}
+
+#artShadow {
+	opacity: 0.8;
+	position: absolute;
+	transform: scale(0.9);
+	width: var(--artsize);
+	height: var(--artsize);
+	background: var(--artbg);
+	top:calc(var(--topinset) + 30px);
+	filter: blur(var(--shadowamount));
+}
+
+.input {
+	width: 80vw;
+	height: 60px;
+	margin: 0 auto;
+	border-radius: 10px;
+	transition: 0.3s border ease-in-out;
+	border: 5px solid var(--inactivecolor);
+}
+
+.input input {
+	width: 90%;
+	border:none;
+	height: 100%;
+	outline: none;
+	font-size: 20px;
+	background: none;
+	padding-left: 5%;
+}
+
+.input:focus-within {
+	border: 5px solid var(--activecolor)
+}
