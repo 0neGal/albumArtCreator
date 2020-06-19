@@ -1,17 +1,18 @@
 /* Copyrighted by 0neGuyDev */
 
 :root {
-	--artsize: 60vw;
+	--artsize: 265px;
 	--topinset: 30px;
 	--uiheight: 60px;
 	--bottominset: 100px;
 	--shadowamount: 40px;
 	--activecolor: #a29bfe;
 	--inactivecolor: #dfe6e9;
-	--artbg: url("testImg.png");
+	--artbg: url("backgrounds/1.png");
 }
 
 body {
+	margin: 0px;
 	font-weight: 700;
 	font-family: SFPro;
 }
@@ -19,6 +20,7 @@ body {
 #artDiv {
 	margin: 0 auto;
 	overflow: auto;
+	position: relative;
 	border-radius: 20px;
 	width: var(--artsize);
 	-ms-user-select: none;
@@ -47,6 +49,7 @@ body {
 	background-size: contain;
 	top:calc(var(--topinset) + 30px);
 	filter: blur(var(--shadowamount));
+	margin-left: calc(50vw - var(--artsize)/2);
 }
 
 .input, .button {
@@ -98,4 +101,41 @@ body {
 	text-align: center;
 	margin-bottom: 20px;
 	font-family: SFMono;
+}
+
+#bigTitle, #subTitle, #subText, #appleLogo {
+	color: white;
+	position: absolute;
+}
+
+#bigTitle {
+	top: 55px;
+	left: 25px;
+	font-size: 40px;
+	position: absolute;
+}
+
+#subTitle {
+	top:92px;
+	left: 25px;
+	font-size: 40px;
+	font-weight: 300;
+}
+
+#subText {
+	top: 232px;
+	left: 25px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+#appleLogo {
+	top: 27px;
+	left: 25px;
+	width: 65px;
+	height: 25px;
+	filter:invert(1);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url(aplMusic.png);
 }
