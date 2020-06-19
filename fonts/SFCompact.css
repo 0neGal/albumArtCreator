@@ -1,85 +1,85 @@
 /* Copyrighted by 0neGuyDev */
 
 @font-face {
+	font-weight: 900;
+	font-style: normal;
 	font-family: 'SFCompact';
 	src: url('SFCompact/Heavy.ttf') format('truetype');
-	font-weight: 900;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 900;
+	font-style: italic;
 	font-family: 'SFCompact';
 	src: url('SFCompact/HeavyItalic.ttf') format('truetype');
-	font-weight: 900;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 800;
+	font-style: normal;
 	font-family: 'SFCompact';
 	src: url('SFCompact/Bold.ttf') format('truetype');
-	font-weight: 800;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 800;
+	font-style: italic;
 	font-family: 'SFCompact';
 	src: url('SFCompact/BoldItalic.ttf') format('truetype');
-	font-weight: 800;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 700;
+	font-style: normal;
 	font-family: 'SFCompact';
 	src: url('SFCompact/SemiBold.ttf') format('truetype');
-	font-weight: 700;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 700;
+	font-style: italic;
 	font-family: 'SFCompact';
 	src: url('SFCompact/SemiBoldItalic.ttf') format('truetype');
-	font-weight: 700;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 600;
+	font-style: normal;
 	font-family: 'SFCompact';
 	src: url('SFCompact/Medium.ttf') format('truetype');
-	font-weight: 600;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 600;
+	font-style: italic;
 	font-family: 'SFCompact';
 	src: url('SFCompact/MediumItalic.ttf') format('truetype');
-	font-weight: 600;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 500;
+	font-style: normal;
 	font-family: 'SFCompact';
 	src: url('SFCompact/Regular.ttf') format('truetype');
-	font-weight: 500;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 500;
+	font-style: italic;
 	font-family: 'SFCompact';
 	src: url('SFCompact/RegularItalic.ttf') format('truetype');
-	font-weight: 500;
-	font-style: italic;
 }
 
 @font-face {
-	font-family: 'SFCompact';
-	src: url('SFCompact/Light.ttf') format('truetype');
 	font-weight: 400;
 	font-style: normal;
+	font-family: 'SFCompact';
+	src: url('SFCompact/Light.ttf') format('truetype');
 }
 
 @font-face {
-	font-family: 'SFCompact';
-	src: url('SFCompact/LightItalic.ttf') format('truetype');
 	font-weight: 400;
 	font-style: italic;
+	font-family: 'SFCompact';
+	src: url('SFCompact/LightItalic.ttf') format('truetype');
 }

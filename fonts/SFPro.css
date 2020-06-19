@@ -1,141 +1,141 @@
 /* Copyrighted by 0neGuyDev */
 
 @font-face {
+	font-weight: 1000;
+	font-style: normal;
 	font-family: 'SFPro';
 	src: url('SFPro/Black.ttf') format('truetype');
-	font-weight: 1000;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 1000;
+	font-style: italic;
 	font-family: 'SFPro';
 	src: url('SFPro/BlackItalic.ttf') format('truetype');
-	font-weight: 1000;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 900;
+	font-style: normal;
 	font-family: 'SFPro';
 	src: url('SFPro/Heavy.ttf') format('truetype');
-	font-weight: 900;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 900;
+	font-style: italic;
 	font-family: 'SFPro';
 	src: url('SFPro/HeavyItalic.ttf') format('truetype');
-	font-weight: 900;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 800;
+	font-style: normal;
 	font-family: 'SFPro';
 	src: url('SFPro/Bold.ttf') format('truetype');
-	font-weight: 800;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 800;
+	font-style: italic;
 	font-family: 'SFPro';
 	src: url('SFPro/BoldItalic.ttf') format('truetype');
-	font-weight: 800;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 700;
+	font-style: normal;
 	font-family: 'SFPro';
 	src: url('SFPro/SemiBold.ttf') format('truetype');
-	font-weight: 700;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 700;
+	font-style: italic;
 	font-family: 'SFPro';
 	src: url('SFPro/SemiBoldItalic.ttf') format('truetype');
-	font-weight: 700;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 600;
+	font-style: normal;
 	font-family: 'SFPro';
 	src: url('SFPro/Medium.ttf') format('truetype');
-	font-weight: 600;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 600;
+	font-style: italic;
 	font-family: 'SFPro';
 	src: url('SFPro/MediumItalic.ttf') format('truetype');
-	font-weight: 600;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 500;
+	font-style: normal;
 	font-family: 'SFPro';
 	src: url('SFPro/Regular.ttf') format('truetype');
-	font-weight: 500;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 500;
+	font-style: italic;
 	font-family: 'SFPro';
 	src: url('SFPro/RegularItalic.ttf') format('truetype');
-	font-weight: 500;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 400;
+	font-style: normal;
 	font-family: 'SFPro';
 	src: url('SFPro/Light.ttf') format('truetype');
-	font-weight: 400;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 400;
+	font-style: italic;
 	font-family: 'SFPro';
 	src: url('SFPro/LightItalic.ttf') format('truetype');
-	font-weight: 400;
-	font-style: italic;
 }
 
 @font-face {
-	font-family: 'SFPro';
-	src: url('SFPro/Thin.ttf') format('truetype');
 	font-weight: 300;
 	font-style: normal;
-}
-
-@font-face {
-	font-family: 'SFPro';
-	src: url('SFPro/ThinItalic.ttf') format('truetype');
-	font-weight: 300;
-	font-style: italic;
-}
-
-@font-face {
 	font-family: 'SFPro';
 	src: url('SFPro/Thin.ttf') format('truetype');
-	font-weight: 200;
-	font-style: normal;
 }
 
 @font-face {
+	font-weight: 300;
+	font-style: italic;
 	font-family: 'SFPro';
 	src: url('SFPro/ThinItalic.ttf') format('truetype');
-	font-weight: 200;
-	font-style: italic;
 }
 
 @font-face {
+	font-weight: 200;
+	font-style: normal;
+	font-family: 'SFPro';
+	src: url('SFPro/Thin.ttf') format('truetype');
+}
+
+@font-face {
+	font-weight: 200;
+	font-style: italic;
+	font-family: 'SFPro';
+	src: url('SFPro/ThinItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-weight: 100;
+	font-style: normal;
 	font-family: 'SFPro';
 	src: url('SFPro/UltraLight.ttf') format('truetype');
-	font-weight: 100;
-	font-style: normal;
 }
 
 @font-face {
-	font-family: 'SFPro';
-	src: url('SFPro/UltraLightItalic.ttf') format('truetype');
 	font-weight: 100;
 	font-style: italic;
+	font-family: 'SFPro';
+	src: url('SFPro/UltraLightItalic.ttf') format('truetype');
 }
