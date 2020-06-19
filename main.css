@@ -70,8 +70,8 @@ body {
 }
 
 .input {
-	transition: 0.3s border ease-in-out;
 	border: 5px solid var(--inactivecolor);
+	transition: 0.3s border ease-in-out, 0.3s box-shadow ease-in-out;
 }
 
 .button {
@@ -83,11 +83,13 @@ body {
 	-webkit-user-select: none;
 	line-height: var(--uiheight);
 	background: var(--inactivecolor);
-	transition: 0.3s background ease-in-out;
+	transition: 0.3s background ease-in-out, 0.3s transform ease-in-out, 0.3s box-shadow ease-in-out;
 }
 
 .button:active {
+	transform: scale(0.95);
 	background: var(--activecolor);
+	box-shadow: 0px 0px 5px var(--activecolor);
 }
 
 .button.bottom {
@@ -110,6 +112,7 @@ body {
 
 .input:focus-within {
 	border: 5px solid var(--activecolor);
+	box-shadow: 0px 0px 5px var(--activecolor);
 }
 
 .copyright {

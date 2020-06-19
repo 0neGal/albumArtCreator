@@ -17,3 +17,12 @@ function generate() {
 function toggleModal() {
 	modal.toggleAttribute("active");
 }
+
+function randomColor() {
+	let colors = ["#55efc4", "#81ecec", "#74b9ff", "#a29bfe", "#ffeaa7", "#fab1a0", "#ff7675", "#fd79a8"]
+	setVariable("activecolor", colors[Math.floor(Math.random() * colors.length)])
+}; randomColor()
+
+function setVariable(variable, value) {
+	document.getElementsByTagName('html')[0].style.cssText = `--${variable}: ${value}`;
+}
