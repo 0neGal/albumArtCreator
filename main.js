@@ -2,7 +2,11 @@
 
 document.addEventListener("keyup", (e) => {
 	updateText();
-})
+});
+
+document.addEventListener('touchmove', function (event) {
+	if (event.scale !== 1) { event.preventDefault(); }
+}, { passive: false });
 
 function updateText() {
 	subText.innerHTML = subTextInput.value
