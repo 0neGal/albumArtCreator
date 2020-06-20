@@ -11,6 +11,10 @@
 	--artbg: url("backgrounds/1.png");
 }
 
+html {
+	touch-action: manipulation;
+}
+
 body {
 	margin: 0px;
 	font-weight: 700;
@@ -102,12 +106,15 @@ body {
 	width: 90%;
 	border:none;
 	height: 100%;
+	padding: 0px;
 	outline: none;
 	font-size: 20px;
 	background: none;
 	padding-left: 5%;
 	font-weight: 700;
 	font-family: SFPro;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 }
 
 .input:focus-within {
@@ -195,7 +202,7 @@ body {
 
 #modal[active] + #darkener {
 	pointer-events: auto;
-	background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.6);
 }
 
 #modal .text {
