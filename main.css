@@ -48,6 +48,7 @@ body {
 	background: var(--artbg);
 	background-size: contain;
 	-webkit-user-select: none;
+	transition: 0.3s background ease-in-out;
 }
 
 #artShadow {

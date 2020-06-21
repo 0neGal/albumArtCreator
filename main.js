@@ -36,17 +36,17 @@ function findBackgrounds() {
 }; findBackgrounds()
 
 function setAlbum(url) {
-	
 	// I'm trying to force the CSS to re-render
 	// Sometimes these do make it work better
 	// Depends on the browser and it's version
 	// For some CSS is pretty bad :p
 	artShadow.style.opacity = "0.0";
 	artDiv.style.transform = "scale(1.03)";
+	art.style.backgroundImage = `url(${url})`;
 	artShadow.style.filter = "blur(calc(var(--shadowamount - 1px)";
 	setTimeout(() => {
-		setVariable("artbg", `url(${url})`);
 		artShadow.style.opacity = "1.0";
+		setVariable("artbg", `url(${url})`);
 		artDiv.style.transform = "scale(1.0)";
 		artShadow.style.filter = "blur(var(--shadowamount)";
 	}, 300)
