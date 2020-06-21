@@ -32,15 +32,11 @@ var backgrounds = 11;
 function findBackgrounds() {
 	for (let i = 1; i < backgrounds; i++) {
 		$.getElementById("backgrounds").innerHTML += `<div onclick="setAlbum('backgrounds/${i}.png')" class="image" style="background-image:url(backgrounds/${i}.png"></div>`;
-		loadImg(`backgrounds/${i}.png`);
 	}
 }; findBackgrounds()
 
-function loadImg(url) {
-	let img = new Image().src = url;
-}
-
 function setAlbum(url) {
+	let cache = new Image().src = url // Pre-load the image
 	// I'm trying to force the CSS to re-render
 	// Sometimes these do make it work better
 	// Depends on the browser and it's version
