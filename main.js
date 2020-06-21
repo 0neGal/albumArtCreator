@@ -1,5 +1,7 @@
 /* Copyrighted by 0neGuyDev */
 
+var $ = document;
+
 document.addEventListener("keyup", (e) => {
 	updateText();
 });
@@ -18,7 +20,7 @@ var backgrounds = 8;
 
 function findBackgrounds() {
 	for (let i = 1; i < backgrounds; i++) {
-		console.log(`${i}.png`)
+		$.getElementById("backgrounds").innerHTML += `<div class="image" style="background-image:url(backgrounds/${i}.png"></div>`
 	}
 }; findBackgrounds()
 
@@ -36,5 +38,5 @@ function randomColor() {
 }; randomColor();
 
 function setVariable(variable, value) {
-	document.getElementsByTagName('html')[0].style.cssText = `--${variable}: ${value}`;
+	$.getElementsByTagName('html')[0].style.cssText = `--${variable}: ${value}`;
 }

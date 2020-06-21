@@ -87,8 +87,14 @@ body {
 	width: 30vw;
 	height: 30vw;
 	border-radius: 5%;
-	scroll-snap-align: start;
+	background-size: contain;
+	scroll-snap-align: center;
 	background-color: var(--inactivecolor);
+	transition: 0.3s transform ease-in-out;
+}
+
+.box .image:active {
+	transform: scale(0.95);
 }
 
 .input {
