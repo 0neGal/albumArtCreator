@@ -107,7 +107,7 @@ body {
 }
 
 .box .image:active {
-	transform: scale(0.95);
+	transform: scale(0.90);
 }
 
 .input {
@@ -245,7 +245,7 @@ body {
 }
 
 #modal .text {
-	margin: 0 auto;
 	width: 80vw;
+	margin: 0 auto;
 	margin-top: 50px;
 }
