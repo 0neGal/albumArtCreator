@@ -64,17 +64,32 @@ body {
 	margin-left: calc(50vw - var(--artsize)/2);
 }
 
-.input, .button {
+.input, .button, .box {
 	width: 80vw;
 	height: 60px;
 	margin: 0 auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	border-radius: 10px;
+	border: 5px solid var(--inactivecolor);
+}
+
+.box {
+	height: 40vw;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: scroll;
+}
+
+.box .image {
+	margin: 22px;
+	width: 30vw;
+	height: 30vw;
+	border-radius: 10px;
+	background-color: var(--inactivecolor);
 }
 
 .input {
-	border: 5px solid var(--inactivecolor);
 	transition: 0.3s border ease-in-out, 0.3s box-shadow ease-in-out;
 }
 
@@ -87,12 +102,13 @@ body {
 	-webkit-user-select: none;
 	line-height: var(--uiheight);
 	background: var(--inactivecolor);
-	transition: 0.3s background ease-in-out, 0.3s transform ease-in-out, 0.3s box-shadow ease-in-out;
+	transition: 0.3s background ease-in-out, 0.3s transform ease-in-out, 0.3s box-shadow ease-in-out, 0.3s border ease-in-out;
 }
 
 .button:active {
 	transform: scale(0.95);
 	background: var(--activecolor);
+	border: 5px solid var(--activecolor);
 	box-shadow: 0px 0px 5px var(--activecolor);
 }
 

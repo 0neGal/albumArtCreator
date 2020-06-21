@@ -14,6 +14,14 @@ function updateText() {
 	subTitle.innerHTML = subTitleInput.value;
 }
 
+var backgrounds = 8;
+
+function findBackgrounds() {
+	for (let i = 1; i < backgrounds; i++) {
+		console.log(`${i}.png`)
+	}
+}; findBackgrounds()
+
 function generate() {
 	toggleModal();
 }
