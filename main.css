@@ -19,6 +19,7 @@ body {
 	margin: 0px;
 	font-weight: 700;
 	font-family: SFPro;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 #artDiv {
@@ -134,7 +135,7 @@ body {
 
 .button.bottom {
 	bottom: 20px;
-	position: absolute;
+	position: fixed;
 	left: calc(50vw - 80vw / 2);
 }
 
@@ -146,7 +147,7 @@ body {
 	outline: none;
 	font-size: 20px;
 	background: none;
-	padding-left: 5%;
+	padding-left: 25px;
 	font-weight: 700;
 	font-family: SFPro;
 	position: relative;
