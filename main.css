@@ -79,13 +79,15 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	overflow: scroll;
+	scroll-snap-type: y mandatory;
 }
 
 .box .image {
-	margin: 22px;
+	margin: 5vw;
 	width: 30vw;
 	height: 30vw;
-	border-radius: 10px;
+	border-radius: 5%;
+	scroll-snap-align: start;
 	background-color: var(--inactivecolor);
 }
 
