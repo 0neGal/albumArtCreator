@@ -2,11 +2,21 @@
 
 var $ = document;
 
-document.addEventListener("keyup", (e) => {
+$.addEventListener("keyup", (e) => {
 	updateText();
+	if (e.key === "Backspace") {
+		if ($.activeElement.tagName === "INPUT") {
+			if ($.activeElement.value === "") {
+				$.activeElement.style.left = "-2px";
+				setTimeout(() => {
+					$.activeElement.style.left = "0px";
+				}, 100)
+			}
+		}
+	}
 });
 
-document.addEventListener('touchmove', function (event) {
+$.addEventListener('touchmove', function (event) {
 	if (event.scale !== 1) {event.preventDefault();}
 }, { passive: false });
 

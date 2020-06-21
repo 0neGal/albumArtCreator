@@ -148,8 +148,10 @@ body {
 	padding-left: 5%;
 	font-weight: 700;
 	font-family: SFPro;
+	position: relative;
 	-moz-appearance: none;
 	-webkit-appearance: none;
+	transition: 0.1s left ease-in-out;
 }
 
 .input:focus-within {
