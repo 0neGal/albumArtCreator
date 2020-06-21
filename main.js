@@ -16,13 +16,22 @@ function updateText() {
 	subTitle.innerHTML = subTitleInput.value;
 }
 
+
 var backgrounds = 8;
 
 function findBackgrounds() {
 	for (let i = 1; i < backgrounds; i++) {
-		$.getElementById("backgrounds").innerHTML += `<div class="image" style="background-image:url(backgrounds/${i}.png"></div>`
+		$.getElementById("backgrounds").innerHTML += `<div onclick="setAlbum('backgrounds/${i}.png')" class="image" style="background-image:url(backgrounds/${i}.png"></div>`
 	}
 }; findBackgrounds()
+
+function setAlbum(url) {
+	setVariable("artbg", `url(${url})`);
+	artDiv.style.transform = "scale(1.03)";
+	setTimeout(() => {
+		artDiv.style.transform = "scale(1.0)";
+	}, 300)
+}
 
 function generate() {
 	toggleModal();

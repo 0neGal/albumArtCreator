@@ -79,6 +79,10 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	overflow: scroll;
+	user-select:none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 	scroll-snap-type: y mandatory;
 }
 
@@ -86,11 +90,17 @@ body {
 	margin: 5vw;
 	width: 30vw;
 	height: 30vw;
+	user-select:none;
 	border-radius: 5%;
+	-ms-user-select: none;
+	-moz-user-select: none;
 	background-size: contain;
+	-webkit-user-select: none;
 	scroll-snap-align: center;
+	background-repeat: no-repeat;
 	background-color: var(--inactivecolor);
 	transition: 0.3s transform ease-in-out;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
 .box .image:active {
