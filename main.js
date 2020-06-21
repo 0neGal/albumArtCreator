@@ -27,7 +27,7 @@ function updateText() {
 }
 
 
-var backgrounds = 8;
+var backgrounds = 9;
 
 function findBackgrounds() {
 	for (let i = 1; i < backgrounds; i++) {
