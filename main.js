@@ -1,6 +1,9 @@
 /* Copyrighted by 0neGuyDev */
 
 var $ = document;
+var console = require("console");
+var htmlToImage = require('html-to-image');
+var htmlToImg = require("save-html-as-image");
 
 $.addEventListener("keyup", (e) => {
 	updateText();
@@ -16,9 +19,13 @@ $.addEventListener("keyup", (e) => {
 	}
 });
 
-$.addEventListener('touchmove', function (event) {
+$.addEventListener("touchmove", (event) => {
 	if (event.scale !== 1) {event.preventDefault();}
 }, { passive: false });
+
+$.getElementById("darkener").addEventListener("click", () => {toggleModal();})
+$.getElementById("generate").addEventListener("click", () => {htmlToImg.saveAsPng(art, {forceFixText: true})})
+$.getElementById("closeModal").addEventListener("click", () => {toggleModal();})
 
 function updateText() {
 	subText.innerHTML = subTextInput.value;
@@ -26,12 +33,11 @@ function updateText() {
 	subTitle.innerHTML = subTitleInput.value;
 }
 
-
 var backgrounds = 11;
 
 function findBackgrounds() {
 	for (let i = 1; i < backgrounds; i++) {
-		$.getElementById("backgrounds").innerHTML += `<div onclick="setAlbum('backgrounds/${i}.png')" class="image" style="background-image:url(backgrounds/${i}.png"></div>`;
+		$.getElementById("backgrounds").innerHTML += `<div onclick="setAlbum('backgrounds/${i}.png')" class="image" class="image" style="background-image:url(backgrounds/${i}.png)"></div>`;
 	}
 }; findBackgrounds()
 
@@ -40,21 +46,26 @@ function setAlbum(url) {
 	// I'm trying to force the CSS to re-render
 	// Sometimes these do make it work better
 	// Depends on the browser and it's version
-	// For some CSS is pretty bad :p
+	// For some reason CSS is pretty bad :p
 	artShadow.style.opacity = "0.0";
 	artDiv.style.transform = "scale(1.03)";
 	art.style.backgroundImage = `url(${url})`;
 	artShadow.style.filter = "blur(calc(var(--shadowamount - 1px)";
 	setTimeout(() => {
 		artShadow.style.opacity = "1.0";
-		setVariable("artbg", `url(${url})`);
+		setVariable("artbg", `url("${url}")`);
 		artDiv.style.transform = "scale(1.0)";
 		artShadow.style.filter = "blur(var(--shadowamount)";
-	}, 300)
+	}, 300);
 }
 
-function generate() {
-	toggleModal();
+function generate(node) {
+	generating = true;
+	htmlToImage.toCanvas($.getElementById(node)).then((canvas) => {
+		$.body.appendChild(canvas);
+		generating = false;
+		toggleModal();
+	});
 }
 
 function toggleModal() {

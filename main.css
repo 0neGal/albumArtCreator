@@ -72,6 +72,7 @@ body {
 	height: 60px;
 	margin: 0 auto;
 	margin-top: 20px;
+	max-width: 1000px;
 	margin-bottom: 20px;
 	border-radius: 10px;
 	border: 5px solid var(--inactivecolor);
@@ -80,12 +81,15 @@ body {
 .box {
 	height: 40vw;
 	display: flex;
+	display: flex;
 	flex-wrap: wrap;
 	overflow: scroll;
 	user-select:none;
+	max-height: 300px;
 	-ms-user-select: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
+	justify-content: space-evenly;
 	scroll-snap-type: y mandatory;
 }
 
@@ -101,6 +105,8 @@ body {
 	-webkit-user-select: none;
 	scroll-snap-align: center;
 	background-repeat: no-repeat;
+	max-width: calc(300px / 2 + 19px);
+	max-height: calc(300px / 2 + 19px);
 	background-color: var(--inactivecolor);
 	transition: 0.3s transform ease-in-out;
 	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
@@ -190,6 +196,13 @@ body {
 	font-weight: 300;
 }
 
+#bigTitle, #subTitle, #subText {
+	width: 90%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
 #subText {
 	top: 230px;
 	left: 25px;
@@ -248,4 +261,14 @@ body {
 	width: 80vw;
 	margin: 0 auto;
 	margin-top: 50px;
+}
+
+#art img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+canvas {
+	display: none;
 }
