@@ -45,7 +45,33 @@ function findBackgrounds() {
 
 function generate(node) {
 	generating = true;
-	htmlToImg.saveAsPng(art, {forceFixText: true})
+	htmlToImg.saveAsPng(art, {forceFixText: true, filename: getFileName(), printDate: false})
+}
+
+function getFileName() {
+	let name = "";
+	let bigT = false;
+	if (bigTitleInput.value.replace(/ /g, "") !== "") {
+		bigT = true;
+		name = bigTitleInput.value;
+	}
+	
+	if (subTitleInput.value.replace(/ /g, "") !== "") {
+		if (bigT) {
+			name += " - ";
+		}
+		name += subTitleInput.value;
+	}
+	
+	if (name === "") {
+		if (subTextInput.value.replace(/ /g, "") !== "") {
+			name += subTextInput.value;
+		} else {
+			name = "Artwork";
+		}
+	}
+	
+	return name;
 }
 
 function toggleModal() {
