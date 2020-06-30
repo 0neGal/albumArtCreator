@@ -37,10 +37,14 @@ function findBackgrounds() {
 		}
 	})
 	
+	files.sort(() => Math.random() - 0.5); // A pseudo random way of randomizing an array.
+	// It doesn't actually have the same amount of chance for it to randomize in a certain way
+	// But it's good enough.
 	backgrounds.innerHTML = "";
 	for (let i = 0; i < files.length; i++) {
 		backgrounds.innerHTML += `<div onclick="setAlbum('backgrounds/${files[i]}')" class="image" class="image" style="background-image:url(backgrounds/${files[i]})"></div>`;
 	}
+	setAlbum("backgrounds/" + files[0])
 }; findBackgrounds()
 
 function generate(node) {
