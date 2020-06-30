@@ -73,6 +73,7 @@ body {
 	margin: 0 auto;
 	margin-top: 20px;
 	max-width: 1000px;
+	background: white;
 	margin-bottom: 20px;
 	border-radius: 10px;
 	border: 5px solid var(--inactivecolor);
@@ -271,4 +272,14 @@ body {
 
 canvas {
 	display: none;
+}
+
+.drag {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	position: fixed;
+	-webkit-app-region: drag;
 }
