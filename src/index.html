@@ -36,19 +36,18 @@
 			<input id="subTextInput" placeholder="Sub Text..." value="Sub Text">
 		</div>
 		
-		<div class="button" id="generate">Generate</div>
+		<div class="button" id="generate" onclick="generate()">Generate</div>
 		
 		<div id="modal" class="active">
 			
 			<div class="text">
 			</div>
-			<div class="button bottom" id="closeModal">Done</div>
+			<div class="button bottom" id="closeModal" onclick="toggleModal()">Done</div>
 		</div>
-		<div id="darkener"></div>
+		<div id="darkener" onclick="toggleModal()"></div>
 		
 		<div class="copyright">This website is not owned by Apple<br>Apple Music is a trade mark of Apple<br>I don't own the rights to their logos or names!<br><br>Website Copyright©: 0neGuyDev</div>
 		
-		<script src="inline.js" charset="utf-8"></script>
 		<script src="main.js" charset="utf-8"></script>
 	</body>
 </html>
