@@ -1,7 +1,7 @@
 /* Copyrighted by 0neGuyDev */
 
 :root {
-	--artsize: 265px;
+	--sizefactor: 1;
 	--topinset: 50px;
 	--uiheight: 60px;
 	--bottominset: 100px;
@@ -9,6 +9,7 @@
 	--activecolor: #a29bfe;
 	--inactivecolor: #dfe6e9;
 	--artbg: url("backgrounds/1.png");
+	--artsize: calc(265px * var(--sizefactor));
 }
 
 html {
@@ -37,7 +38,7 @@ body {
 }
 
 #artDiv:active {
-	transform:scale(0.99);
+	transform:scale(0.99) !important;
 }
 
 #art {
@@ -184,17 +185,17 @@ body {
 }
 
 #bigTitle {
-	top: 55px;
-	left: 25px;
-	font-size: 40px;
 	position: absolute;
+	top: calc(55px * var(--sizefactor));
+	left: calc(25px * var(--sizefactor));
+	font-size: calc(40px * var(--sizefactor));
 }
 
 #subTitle {
-	top:95px;
-	left: 25px;
-	font-size: 40px;
 	font-weight: 300;
+	top:calc(95px * var(--sizefactor));
+	left: calc(25px * var(--sizefactor));
+	font-size: calc(40px * var(--sizefactor));
 }
 
 #bigTitle, #subTitle, #subText {
@@ -205,17 +206,17 @@ body {
 }
 
 #subText {
-	top: 230px;
-	left: 25px;
-	font-size: 12px;
+	top: calc(230px * var(--sizefactor));
+	left: calc(25px * var(--sizefactor));
+	font-size: calc(12px * var(--sizefactor));
 	font-weight: 500;
 }
 
 #appleLogo {
-	top: 27px;
-	left: 25px;
-	width: 65px;
-	height: 25px;
+	top: calc(27px * var(--sizefactor));
+	left: calc(25px * var(--sizefactor));
+	width: calc(65px * var(--sizefactor));
+	height: calc(25px * var(--sizefactor));
 	filter:invert(1);
 	background-size: contain;
 	background-repeat: no-repeat;

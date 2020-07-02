@@ -13,7 +13,7 @@ function init() {
 		maximizable: false,
 		fullscreenable: false,
 		titleBarStyle: "hiddenInset",
-		vibrancy: "light",
+		vibrancy: "appearance-based",
 		webPreferences: {
 			nodeIntegration: true,
 			experimentalFeatures: true,
