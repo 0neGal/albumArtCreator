@@ -145,3 +145,114 @@ function fading(transition) {
 	
 	fade()
 }
+
+const templates = [
+	{
+		title: "Jazz",
+		subtitle: randomSubTitle(),
+		subtext: "new orleans style"
+	},
+	{
+		title: "Opera",
+		subtitle: randomSubTitle(),
+		subtext: "the genre not the singer"
+	},
+	{
+		title: "Rock/Metal",
+		subtitle: randomSubTitle(),
+		subtext: ""
+	},
+	{
+		title: "Minecraft",
+		subtitle: "Soundtrack",
+		subtext: ""
+	},
+	{
+		title: "Game",
+		subtitle: "Soundtracks",
+		subtext: ""
+	},
+	{
+		title: "Favorites",
+		subtitle: randomSubTitle(),
+		subtext: "all the good stuff"
+	},
+	{
+		title: "Lofi",
+		subtitle: randomSubTitle(),
+		subtext: "very chill and good vibes"
+	},
+	{
+		title: "Epic Music",
+		subtitle: randomSubTitle(),
+		subtext: "what they use in the trailers!"
+	},
+	{
+		title: "Opera",
+		subtitle: randomSubTitle(),
+		subtext: "the genre not the singer"
+	},
+	{
+		title: "Old Music",
+		subtitle: randomSubTitle(),
+		subtext: "the old is new"
+	},
+	{
+		title: "70-80s",
+		subtitle: randomSubTitle(),
+		subtext: "the old never dies"
+	},
+	{
+		title: "AC/DC",
+		subtitle: randomSubTitle(),
+		subtext: "great hard rock music"
+	},
+	{
+		title: "Queen",
+		subtitle: randomSubTitle(),
+		subtext: "the band not the person"
+	},
+]
+
+function randomSubTitle() {
+	let subTitles = ["Playlist", "Collection", ""]
+	let which = Math.floor(Math.random()*(subTitles.length-0)+0)
+	
+	return subTitles[which];
+}
+
+let randomizing = false;
+let lastWhich;
+
+function randomize() {
+	if (randomizing) {
+		return;
+	}; randomizing = true;
+	
+	let which = Math.floor(Math.random()*(templates.length-0)+0)
+	
+	if (lastWhich === which) {
+		randomizing = false;
+		randomize();
+		return;
+	}
+	
+	bigTitle.innerHTML = templates[which].title;
+	bigTitleInput.value = templates[which].title;
+	
+	subTitle.innerHTML = templates[which].subtitle;
+	subTitleInput.value = templates[which].subtitle;
+	
+	if (Math.floor(Math.random()*(1-0+1)+0) === 1) {
+		subText.innerHTML = templates[which].subtext;
+		subTextInput.value = templates[which].subtext;
+	} else {
+		subText.innerHTML = "";
+		subTextInput.value = "";
+	}
+	
+	$.querySelectorAll(".image")[Math.floor(Math.random()*($.querySelectorAll(".image").length-0)+0)].click()
+	setTimeout(() => {
+		randomizing = false;
+	}, 1000)
+}
