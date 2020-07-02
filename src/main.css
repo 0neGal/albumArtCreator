@@ -166,8 +166,8 @@ body::-webkit-scrollbar, #artDiv::-webkit-scrollbar {
 	outline: none;
 	font-size: 20px;
 	background: none;
-	padding-left: 25px;
 	font-weight: 700;
+	padding-left: 25px;
 	font-family: SFPro;
 	position: relative;
 	-moz-appearance: none;
@@ -207,21 +207,21 @@ body::-webkit-scrollbar, #artDiv::-webkit-scrollbar {
 }
 
 #subText {
+	font-weight: 500;
 	top: calc(230px * var(--sizefactor));
 	left: calc(25px * var(--sizefactor));
 	font-size: calc(12px * var(--sizefactor));
-	font-weight: 500;
 }
 
 #appleLogo {
-	top: calc(27px * var(--sizefactor));
-	left: calc(25px * var(--sizefactor));
-	width: calc(65px * var(--sizefactor));
-	height: calc(25px * var(--sizefactor));
 	filter:invert(1);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-image: url(aplMusic.png);
+	top: calc(27px * var(--sizefactor));
+	left: calc(25px * var(--sizefactor));
+	width: calc(65px * var(--sizefactor));
+	height: calc(25px * var(--sizefactor));
 }
 
 #art img {
@@ -261,8 +261,8 @@ canvas {
 	width: 124px;
 	height: 124px;
 	margin: 0 auto;
-	transition: 0.5s transform ease-in-out, 0.3s background ease-in-out;
 	background: url("icons/image.svg");
+	transition: 0.5s transform ease-in-out, 0.3s background ease-in-out;
 }
 
 #generating #text {
