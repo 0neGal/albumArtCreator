@@ -34,7 +34,7 @@ body {
 	height: var(--artsize);
 	margin-top: var(--topinset);
 	margin-bottom: var(--bottominset);
-	transition: 0.3s transform ease-in-out;
+	transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
 }
 
 #artDiv:active {
@@ -78,6 +78,7 @@ body {
 	margin-bottom: 20px;
 	border-radius: 10px;
 	border: 5px solid var(--inactivecolor);
+	transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out, 0.3s border ease-in-out, 0.3s box-shadow ease-in-out, 0.3s background ease-in-out;
 }
 
 .box {
@@ -110,16 +111,11 @@ body {
 	max-width: calc(300px / 2 + 19px);
 	max-height: calc(300px / 2 + 19px);
 	background-color: var(--inactivecolor);
-	transition: 0.3s transform ease-in-out;
 	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
 .box .image:active {
 	transform: scale(0.90);
-}
-
-.input {
-	transition: 0.3s border ease-in-out, 0.3s box-shadow ease-in-out;
 }
 
 .button {
@@ -131,7 +127,6 @@ body {
 	-webkit-user-select: none;
 	line-height: var(--uiheight);
 	background: var(--inactivecolor);
-	transition: 0.3s background ease-in-out, 0.3s transform ease-in-out, 0.3s box-shadow ease-in-out, 0.3s border ease-in-out;
 }
 
 .button:active {
@@ -167,16 +162,6 @@ body {
 .input:focus-within {
 	border: 5px solid var(--activecolor);
 	box-shadow: 0px 0px 5px var(--activecolor);
-}
-
-.copyright {
-	width: 90vw;
-	margin: 0 auto;
-	font-size: 10px;
-	margin-top: 150px;
-	text-align: center;
-	margin-bottom: 20px;
-	font-family: SFMono;
 }
 
 #bigTitle, #subTitle, #subText, #appleLogo {

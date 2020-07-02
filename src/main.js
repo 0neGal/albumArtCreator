@@ -107,3 +107,36 @@ function setAlbum(url) {
 function setVariable(variable, value) {
 	$.getElementsByTagName('html')[0].style.cssText = `--${variable}: ${value}`;
 }
+
+function fading(transition) {
+	let scale = 0.9;
+	let timeout = 100;
+	let opacity = 0.0;
+	let delay = (evaluation) => {
+		setTimeout(() => {
+			eval(evaluation);
+		}, timeout)
+		timeout += 100;
+	}
+	
+	let fade = () => {
+		delay(`artShadow.style.opacity = '${opacity}'`)
+		delay(`artDiv.style.opacity = '${opacity}';artDiv.style.transform = 'scale(${scale})'`)
+		for (let i = 0; i < $.querySelectorAll(".box").length; i++) {
+			delay(`$.querySelectorAll('.box')[${i}].style.opacity = '${opacity}';$.querySelectorAll('.box')[${i}].style.transform = 'scale(${scale})'`)
+		}
+		for (let i = 0; i < $.querySelectorAll(".button").length; i++) {
+			delay(`$.querySelectorAll('.input')[${i}].style.opacity = '${opacity}';$.querySelectorAll('.input')[${i}].style.transform = 'scale(${scale})'`)
+		}
+		for (let i = 0; i < $.querySelectorAll(".button").length; i++) {
+			delay(`$.querySelectorAll('.button')[${i}].style.opacity = '${opacity}';$.querySelectorAll('.button')[${i}].style.transform = 'scale(${scale})'`)
+		}
+	}
+	
+	if (transition) {
+		opacity = "1.0";
+		scale = "1.0";
+	}
+	
+	fade()
+}
