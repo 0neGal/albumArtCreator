@@ -47,9 +47,22 @@ function findBackgrounds() {
 	setAlbum("backgrounds/" + files[0])
 }; findBackgrounds()
 
-function generate(node) {
-	generating = true;
-	htmlToImg.saveAsPng(art, {forceFixText: true, filename: getFileName(), printDate: false})
+async function generate() {
+	fading(false);
+	
+	setTimeout(async () => {
+		drag.style.zIndex = "10";
+		generating.style.opacity = "1.0";
+		generating.style.transform = "scale(1.0)";
+		
+		await htmlToImg.saveAsPng(art, {forceFixText: true, filename: getFileName(), printDate: false})
+		
+		drag.style.zIndex = "-1";
+		generating.style.opacity = "0.0";
+		generating.style.transform = "scale(0.9)";
+		
+		setTimeout(() => {fading(true)}, 500);
+	}, 1300);
 }
 
 function getFileName() {
@@ -77,15 +90,6 @@ function getFileName() {
 	
 	return name;
 }
-
-function toggleModal() {
-	modal.toggleAttribute("active");
-}
-
-function randomColor() {
-	let colors = ["#55efc4", "#81ecec", "#74b9ff", "#a29bfe", "#ffeaa7", "#fab1a0", "#ff7675", "#fd79a8"];
-	setVariable("activecolor", colors[Math.floor(Math.random() * colors.length)]);
-}; randomColor();
 
 function setVariable(variable, value) {
 	$.getElementsByTagName('html')[0].style.cssText = `--${variable}: ${value}`;
@@ -125,7 +129,7 @@ function fading(transition) {
 		for (let i = 0; i < $.querySelectorAll(".box").length; i++) {
 			delay(`$.querySelectorAll('.box')[${i}].style.opacity = '${opacity}';$.querySelectorAll('.box')[${i}].style.transform = 'scale(${scale})'`)
 		}
-		for (let i = 0; i < $.querySelectorAll(".button").length; i++) {
+		for (let i = 0; i < $.querySelectorAll(".input").length; i++) {
 			delay(`$.querySelectorAll('.input')[${i}].style.opacity = '${opacity}';$.querySelectorAll('.input')[${i}].style.transform = 'scale(${scale})'`)
 		}
 		for (let i = 0; i < $.querySelectorAll(".button").length; i++) {
@@ -134,6 +138,7 @@ function fading(transition) {
 	}
 	
 	if (transition) {
+		scrollTo(0,0);
 		opacity = "1.0";
 		scale = "1.0";
 	}

@@ -4,12 +4,23 @@
 	--sizefactor: 1;
 	--topinset: 50px;
 	--uiheight: 60px;
+	--textcolor: black;
 	--bottominset: 100px;
 	--shadowamount: 40px;
 	--activecolor: #a29bfe;
 	--inactivecolor: #dfe6e9;
 	--artbg: url("backgrounds/1.png");
 	--artsize: calc(265px * var(--sizefactor));
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--textcolor: white;
+	}
+	
+	#generating #icon {
+		filter: invert(1)
+	}
 }
 
 html {
@@ -21,6 +32,10 @@ body {
 	font-weight: 700;
 	font-family: SFPro;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body::-webkit-scrollbar, #artDiv::-webkit-scrollbar { 
+	display: none; 
 }
 
 #artDiv {
@@ -111,6 +126,7 @@ body {
 	max-width: calc(300px / 2 + 19px);
 	max-height: calc(300px / 2 + 19px);
 	background-color: var(--inactivecolor);
+	transition: 0.3s transform ease-in-out;
 	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
@@ -208,48 +224,6 @@ body {
 	background-image: url(aplMusic.png);
 }
 
-#modal {
-	z-index: 10;
-	top: 110vh;
-	width: 100vw;
-	height: 95vh;
-	background: white;
-	position: fixed;
-	transform: scale(0.97);
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	box-shadow: 0px -15px 20px rgba(0,0,0,0.05);
-	transition: 0.3s top ease-in-out, 0.4s transform ease-in-out;
-}
-
-#modal[active] {
-	top: 5%;
-	transform: scale(1.0);
-}
-
-#darkener {
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 9;
-	position: fixed;
-	background: none;
-	pointer-events: none;
-	transition: 0.3s background ease-in-out;
-}
-
-#modal[active] + #darkener {
-	pointer-events: auto;
-	background: rgba(0,0,0,0.6);
-}
-
-#modal .text {
-	width: 80vw;
-	margin: 0 auto;
-	margin-top: 50px;
-}
-
 #art img {
 	width: 100%;
 	height: 100%;
@@ -260,7 +234,7 @@ canvas {
 	display: none;
 }
 
-.drag {
+#drag {
 	top: 0;
 	left: 0;
 	right: 0;
@@ -268,4 +242,31 @@ canvas {
 	z-index: -1;
 	position: fixed;
 	-webkit-app-region: drag;
+}
+
+#generating {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0.0;
+	position: fixed;
+	margin-top: 40vh;
+	pointer-events: none;
+	transform: scale(0.9);
+	transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+}
+
+#generating #icon {
+	width: 124px;
+	height: 124px;
+	margin: 0 auto;
+	transition: 0.5s transform ease-in-out, 0.3s background ease-in-out;
+	background: url("icons/image.svg");
+}
+
+#generating #text {
+	text-align: center;
+	color: var(--textcolor);
+	transition: 0.3s color ease-in-out;
 }

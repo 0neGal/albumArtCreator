@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=0">
 	</head>
 	<body ontouchstart="">
-		<div class="drag"></div>
+		<div id="drag"></div>
 		<div id="artShadow"></div>
 		<div id="artDiv">
 			<div id="art">
@@ -39,13 +39,6 @@
 		<div class="button" id="generate" onclick="generate()">Generate</div>
 		<div class="button" id="randomize" onclick="randomize()">Randomize</div>
 		
-		<div id="modal" class="active">
-			
-			<div class="text">
-			</div>
-			<div class="button bottom" id="closeModal" onclick="toggleModal()">Done</div>
-		</div>
-		<div id="darkener" onclick="toggleModal()"></div>
 		<div id="generating">
 			<div id="icon"></div>
 			<div id="text">Generating Image!</div>
