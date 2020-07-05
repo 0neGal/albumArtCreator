@@ -168,7 +168,7 @@ const templates = [
 		subtext: ""
 	},
 	{
-		title: "Game",
+		title: "Video Game",
 		subtitle: "Soundtracks",
 		subtext: ""
 	},
@@ -212,6 +212,16 @@ const templates = [
 		subtitle: randomSubTitle(),
 		subtext: "the band not the person"
 	},
+	{
+		title: "Sabaton",
+		subtitle: randomSubTitle(),
+		subtext: "this should be the swedish anthem"
+	},
+	{
+		title: "Shazam",
+		subtitle: randomSubTitle(),
+		subtext: "discovered through the power of magic"
+	},
 ]
 
 function randomSubTitle() {
@@ -235,7 +245,7 @@ function randomize() {
 		randomizing = false;
 		randomize();
 		return;
-	}
+	}; lastWhich = which;
 	
 	bigTitle.innerHTML = templates[which].title;
 	bigTitleInput.value = templates[which].title;
