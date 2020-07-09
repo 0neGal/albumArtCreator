@@ -105,3 +105,6 @@ dist
 
 # fuck you .DS_Store
 .DS_Store
+
+# No need to upload the whole release builds
+release-builds
