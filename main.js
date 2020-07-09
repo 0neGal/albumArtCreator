@@ -26,6 +26,9 @@ function init() {
 	
 	.webContents.once("dom-ready", () => {
 		win.setMenu(null)
+		if (process.platform !== "darwin") {
+			win.setBackgroundColor("#FFFFFF")
+		}
 		win.show()
 	})
 }
