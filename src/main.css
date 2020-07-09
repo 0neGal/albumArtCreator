@@ -57,14 +57,16 @@ body {
 }
 
 #art {
+	cursor: pointer;
 	user-select:none;
 	width: var(--artsize);
 	-ms-user-select: none;
 	-moz-user-select: none;
 	height: var(--artsize);
+	background-size: cover;
 	background: var(--artbg);
-	background-size: contain;
 	-webkit-user-select: none;
+	background-position: center;
 	transition: 0.3s background ease-in-out, 0.3s filter ease-in-out;
 }
 
@@ -75,8 +77,9 @@ body {
 	transform: scale(0.9);
 	width: var(--artsize);
 	height: var(--artsize);
+	background-size: cover;
 	background: var(--artbg);
-	background-size: contain;
+	background-position: center;
 	top:calc(var(--topinset) + 30px);
 	filter: blur(var(--shadowamount));
 	margin-left: calc(50vw - var(--artsize)/2);

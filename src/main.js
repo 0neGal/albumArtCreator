@@ -4,6 +4,7 @@ var $ = document;
 const fs = require('fs');
 var console = require("console");
 var htmlToImg = require("save-html-as-image");
+const { dialog } = require("electron").remote;
 
 $.addEventListener("keyup", (e) => {
 	updateText();
@@ -42,7 +43,7 @@ function findBackgrounds() {
 	// But it's good enough.
 	backgrounds.innerHTML = "";
 	for (let i = 0; i < files.length; i++) {
-		backgrounds.innerHTML += `<div onclick="setAlbum('backgrounds/${files[i]}')" class="image" class="image" style="background-image:url(backgrounds/${files[i]})"></div>`;
+		backgrounds.innerHTML += `<div onclick="setAlbum('backgrounds/${files[i]}')" class="image" class="image" style="background-image:url(backgrounds/${files[i]}) !important"></div>`;
 	}
 	setAlbum("backgrounds/" + files[0])
 }; findBackgrounds()
@@ -281,4 +282,14 @@ function generateImage() {
 		artShadow.style.filter = `blur(var(--shadowamount)) sepia(${sepia}) saturate(${saturation}%)`;
 		art.style.filter = `sepia(${sepia}) saturate(${saturation}%)`;
 	}, 300)
+}
+
+function chooseImage() {
+	dialog.showOpenDialog({
+		filters: [
+			{ name: "Images", extensions: ["jpg", "png", "jpeg"] },
+		]}, { properties: [ "openFile" ]}).then(result => {
+		if (result.canceled) {return};
+		setAlbum(result.filePaths[0])
+	})
 }
