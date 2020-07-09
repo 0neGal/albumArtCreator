@@ -20,11 +20,12 @@ function init() {
 		}
 	}); win.loadFile(__dirname + "/src/index.html")
 	
-	win.on("closed", function () {
+	win.on("closed", () => {
 		winin = null
 	})
 	
 	.webContents.once("dom-ready", () => {
+		win.setMenu(null)
 		win.show()
 	})
 }
