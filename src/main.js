@@ -45,6 +45,8 @@ function findBackgrounds() {
 		backgrounds.innerHTML += `<div onclick="setAlbum('backgrounds/${files[i]}')" class="image" class="image" style="background-image:url(backgrounds/${files[i]})"></div>`;
 	}
 	setAlbum("backgrounds/" + files[0])
+	backgrounds.innerHTML += `<div onclick="generateAlbum()" class="image full" class="image">Generate Image</div>`; // Generate Random image button
+	backgrounds.innerHTML += `<div onclick="chooseImage()" class="image full" class="image">Choose your own image</div>`; // User chosen image button
 }; findBackgrounds()
 
 async function generate() {

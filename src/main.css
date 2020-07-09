@@ -126,12 +126,23 @@ body {
 	max-width: calc(300px / 2 + 19px);
 	max-height: calc(300px / 2 + 19px);
 	background-color: var(--inactivecolor);
-	transition: 0.3s transform ease-in-out;
+	transition: 0.3s transform ease-in-out, 0.3s background ease-in-out;
 	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
 }
 
 .box .image:active {
 	transform: scale(0.90);
+}
+
+.box .image.full {
+	width: 100%;
+	max-width: none;
+	line-height: 30vw;
+	text-align: center;
+}
+
+.full:active {
+	background: var(--activecolor);
 }
 
 .button {
