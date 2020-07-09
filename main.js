@@ -24,7 +24,7 @@ function init() {
 		winin = null
 	})
 	
-	.webContents.once("dom-ready", () => {
+	win.webContents.once("dom-ready", () => {
 		win.setMenu(null)
 		if (process.platform !== "darwin") {
 			win.setBackgroundColor("#FFFFFF")
