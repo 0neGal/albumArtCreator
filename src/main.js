@@ -45,7 +45,7 @@ function findBackgrounds() {
 		backgrounds.innerHTML += `<div onclick="setAlbum('backgrounds/${files[i]}')" class="image" class="image" style="background-image:url(backgrounds/${files[i]})"></div>`;
 	}
 	setAlbum("backgrounds/" + files[0])
-	backgrounds.innerHTML += `<div onclick="generateAlbum()" class="image full" class="image">Generate Image</div>`; // Generate Random image button
+	backgrounds.innerHTML += `<div onclick="generateImage()" class="image full" class="image">Generate Image</div>`; // Generate Random image button
 	backgrounds.innerHTML += `<div onclick="chooseImage()" class="image full" class="image">Choose your own image</div>`; // User chosen image button
 }; findBackgrounds()
 
@@ -101,6 +101,7 @@ function setAlbum(url) {
 	artShadow.style.opacity = "0.0";
 	artDiv.style.transform = "scale(1.03)";
 	art.style.backgroundImage = `url(${url})`;
+	art.style.filter = "";
 	artShadow.style.filter = "blur(calc(var(--shadowamount - 1px)";
 	setTimeout(() => {
 		artShadow.style.opacity = "1.0";
@@ -263,8 +264,23 @@ function randomize() {
 		subTextInput.value = "";
 	}
 	
-	$.querySelectorAll(".image")[Math.floor(Math.random()*($.querySelectorAll(".image").length-0)+0)].click()
+	randomImage()
 	setTimeout(() => {
 		randomizing = false;
 	}, 1000)
+}
+
+function randomImage() {
+	$.querySelectorAll(".image")[Math.floor(Math.random()*($.querySelectorAll(".image").length-0)+0)].click()
+}
+
+function generateImage() {
+	randomImage();
+	let sepia = Math.random()*(1-0.2)+0.2;
+	let saturation = Math.random()*(100-70)+70;
+	
+	setTimeout(() => {
+		artShadow.style.filter = `blur(var(--shadowamount)) sepia(${sepia}) saturate(${saturation}%)`;
+		art.style.filter = `sepia(${sepia}) saturate(${saturation}%)`;
+	}, 300)
 }
