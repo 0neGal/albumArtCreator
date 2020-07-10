@@ -4,7 +4,7 @@ var $ = document;
 const fs = require('fs');
 var console = require("console");
 var htmlToImg = require("save-html-as-image");
-const { dialog } = require("electron").remote;
+const { dialog, shell } = require("electron").remote;
 
 $.addEventListener("keyup", (e) => {
 	updateText();
@@ -19,10 +19,6 @@ $.addEventListener("keyup", (e) => {
 		}
 	}
 });
-
-$.querySelector(".box").addEventListener("mouseover", () => {
-	console.log("test")
-})
 
 function updateText() {
 	subText.innerHTML = subTextInput.value;
@@ -299,4 +295,10 @@ function chooseImage() {
 		if (result.canceled) {return};
 		setAlbum(result.filePaths[0])
 	})
+}
+
+// This is unnecessary but I don't care...
+// It makes the HTML code look cleaner :p
+function openLink(url) {
+	shell.openExternal(url)
 }

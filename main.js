@@ -16,6 +16,7 @@ function init() {
 		vibrancy: "appearance-based",
 		webPreferences: {
 			nodeIntegration: true,
+			enableRemoteModule: true,
 			experimentalxFeatures: true,
 		}
 	}); win.loadFile(__dirname + "/src/index.html")
