@@ -8,7 +8,7 @@ const { dialog } = require("electron").remote;
 
 $.addEventListener("keyup", (e) => {
 	updateText();
-	if (e.key === "Backspace") {/Users/0neguy/Documents/GitHub/albumArtCreator/src/main.js
+	if (e.key === "Backspace") {
 		if ($.activeElement.tagName === "INPUT") {
 			if ($.activeElement.value === "") {
 				$.activeElement.style.left = "-2px";
