@@ -8,7 +8,7 @@ const { dialog } = require("electron").remote;
 
 $.addEventListener("keyup", (e) => {
 	updateText();
-	if (e.key === "Backspace") {
+	if (e.key === "Backspace") {/Users/0neguy/Documents/GitHub/albumArtCreator/src/main.js
 		if ($.activeElement.tagName === "INPUT") {
 			if ($.activeElement.value === "") {
 				$.activeElement.style.left = "-2px";
@@ -137,6 +137,7 @@ function fading(transition) {
 		for (let i = 0; i < $.querySelectorAll(".button").length; i++) {
 			delay(`$.querySelectorAll('.button')[${i}].style.opacity = '${opacity}';$.querySelectorAll('.button')[${i}].style.transform = 'scale(${scale})'`)
 		}
+		delay(`smolBtns.style.opacity = '${opacity}';smolBtns.style.transform = 'scale(${scale})'`)
 	}
 	
 	if (transition) {
@@ -236,6 +237,12 @@ function randomSubTitle() {
 let randomizing = false;
 let lastWhich;
 
+// This is a terrible way of doing it
+// Don't do it this way
+// Yet I will, because I can, and because I'm lazy.
+// And most people won't fuckin use this function anyway so whatever
+// Just please don't do it this way if you're trying to learn from my dogshit code.
+// Thanks.
 function randomize() {
 	if (randomizing) {
 		return;

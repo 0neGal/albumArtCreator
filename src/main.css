@@ -7,19 +7,21 @@
 	--textcolor: black;
 	--bottominset: 100px;
 	--shadowamount: 40px;
-	--activecolor: #a29bfe;
-	--inactivecolor: #dfe6e9;
 	--artbg: url("backgrounds/1.png");
+	--activecolor: rgba(100,100,100,0.4);
+	--inactivecolor: rgba(100,100,100,0.1);
 	--artsize: calc(265px * var(--sizefactor));
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--textcolor: white;
+		--textcolor: rgb(200,200,200);
+		--activecolor: rgba(220,220,220,0.4);
+		--inactivecolor: rgba(220,220,220,0.1);
 	}
 	
 	#generating #icon {
-		filter: invert(1)
+		filter: invert(1);
 	}
 }
 
@@ -63,11 +65,11 @@ body {
 	-ms-user-select: none;
 	-moz-user-select: none;
 	height: var(--artsize);
-	background-size: cover;
 	background: var(--artbg);
 	-webkit-user-select: none;
 	background-position: center;
 	transition: 0.3s background ease-in-out, 0.3s filter ease-in-out;
+	background-size: cover !important; /* I actually have no clue where the fuck this gets overwritten and why tf it's neccesarry, but it is. */
 }
 
 #artShadow {
@@ -92,9 +94,10 @@ body {
 	margin: 0 auto;
 	margin-top: 20px;
 	max-width: 1000px;
-	background: white;
 	margin-bottom: 20px;
 	border-radius: 10px;
+	color: var(--textcolor);
+	background: var(--inactivecolor);
 	border: 5px solid var(--inactivecolor);
 	transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out, 0.3s border ease-in-out, 0.3s box-shadow ease-in-out, 0.3s background ease-in-out;
 }
@@ -118,6 +121,7 @@ body {
 	margin: 5vw;
 	width: 30vw;
 	height: 30vw;
+	cursor: pointer;
 	user-select:none;
 	border-radius: 5%;
 	-ms-user-select: none;
@@ -131,7 +135,7 @@ body {
 	max-height: calc(300px / 2 + 19px);
 	background-color: var(--inactivecolor);
 	box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
-	transition: 0.3s transform ease-in-out, 0.3s background ease-in-out;
+	transition: 0.3s transform ease-in-out, 0.3s background ease-in-out, 0.3s opacity ease-in-out;
 }
 
 .box .image:active {
@@ -161,16 +165,50 @@ body {
 }
 
 .button:active {
-	transform: scale(0.95);
-	background: var(--activecolor);
 	border: 5px solid var(--activecolor);
-	box-shadow: 0px 0px 5px var(--activecolor);
 }
 
 .button.bottom {
 	bottom: 20px;
 	position: fixed;
 	left: calc(50vw - 80vw / 2);
+}
+
+.smolBtn:active, .button:active {
+	opacity: 1.0;
+	transform: scale(0.95);
+	background: var(--activecolor);
+	box-shadow: 0px 0px 5px var(--activecolor);
+}
+
+#smolBtns {
+	width: 94%;
+	display: flex;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	transition: 0.3s opacity ease-in-out, 0.3s transform ease-in-out;
+}
+
+.smolBtn {
+	display: flex;
+	margin: 0 auto;
+	cursor: pointer;
+	display: inline;
+	user-select: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: var(--textcolor);
+	background: var(--inactivecolor);
+	border: 3px solid var(--inactivecolor);
+	transition: 0.3s background ease-in-out, 0.3s transform ease-in-out, 0.3s opacity ease-in-out, 0.3s box-shadow ease-in-out;
+}
+
+.smolBtn:hover, .button:hover {
+	opacity: 0.8;
+}
+
+.smolBtn:active {
+	border: 3px solid var(--activecolor);
 }
 
 .input input {
@@ -186,6 +224,7 @@ body {
 	font-family: SFPro;
 	position: relative;
 	-moz-appearance: none;
+	color: var(--textcolor);
 	-webkit-appearance: none;
 	transition: 0.1s left ease-in-out;
 }

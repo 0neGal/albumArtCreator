@@ -108,3 +108,6 @@ dist
 
 # No need to upload the whole release builds
 release-builds
+
+# Personal notes, fuck off.
+notes.txt
