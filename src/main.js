@@ -20,9 +20,9 @@ $.addEventListener("keyup", (e) => {
 	}
 });
 
-$.addEventListener("touchmove", (event) => {
-	if (event.scale !== 1) {event.preventDefault();}
-}, { passive: false });
+$.querySelector(".box").addEventListener("mouseover", () => {
+	console.log("test")
+})
 
 function updateText() {
 	subText.innerHTML = subTextInput.value;
