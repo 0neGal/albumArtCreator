@@ -40,6 +40,10 @@ body {
 	display: none; 
 }
 
+#art, .smolBtn, .button {
+	-webkit-app-region: none;
+}
+
 #artDiv {
 	cursor:default;
 	margin: 0 auto;
