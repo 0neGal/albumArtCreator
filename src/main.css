@@ -40,7 +40,7 @@ body {
 	display: none; 
 }
 
-#art, .smolBtn, .button {
+#art, .smolBtn, .button, .input, .box {
 	-webkit-app-region: none;
 }
 
