@@ -1,6 +1,7 @@
 /* Copyrighted by 0neGuyDev */
 
 :root {
+	--bg: white;
 	--sizefactor: 1;
 	--topinset: 50px;
 	--uiheight: 60px;
@@ -15,6 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
+		--bg: rgb(100,100,100);
 		--textcolor: rgb(200,200,200);
 		--activecolor: rgba(220,220,220,0.4);
 		--inactivecolor: rgba(220,220,220,0.1);
@@ -306,6 +308,7 @@ canvas {
 	z-index: -1;
 	position: fixed;
 	-webkit-app-region: drag;
+	transition: 0.3s background ease-in-out;
 }
 
 #generating {

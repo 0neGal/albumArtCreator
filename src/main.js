@@ -6,6 +6,10 @@ var console = require("console");
 var htmlToImg = require("save-html-as-image");
 const { dialog, shell } = require("electron").remote;
 
+if (process.platform !== "darwin") {
+	drag.style.background = "var(--bg)";
+}
+
 $.addEventListener("keyup", (e) => {
 	updateText();
 	if (e.key === "Backspace") {
@@ -239,7 +243,14 @@ let lastWhich;
 // And most people won't fuckin use this function anyway so whatever
 // Just please don't do it this way if you're trying to learn from my dogshit code.
 // Thanks.
-function randomize() {
+function randomize(boolean) {
+	let gradient = randomGradient()
+	if (boolean) {
+		art.style.backgroundImage = gradient;
+		artShadow.style.backgroundImage = gradient;
+		return;
+	}
+
 	if (randomizing) {
 		return;
 	}; randomizing = true;
@@ -295,6 +306,14 @@ function chooseImage() {
 		if (result.canceled) {return};
 		setAlbum(result.filePaths[0])
 	})
+}
+
+function randomColor() {
+	return "#000000".replace(/0/g, () => {return (~~(Math.random()*16)).toString(16);});
+}
+
+function randomGradient() {
+	return `linear-gradient(${Math.floor(Math.random()*(180-0)+0)}deg, ${randomColor()}, ${randomColor()})`
 }
 
 // This is unnecessary but I don't care...

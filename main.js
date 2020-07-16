@@ -12,6 +12,7 @@ function init() {
 		transparent: true,
 		maximizable: false,
 		fullscreenable: false,
+		icon: "icons/icon.png",
 		titleBarStyle: "hiddenInset",
 		vibrancy: "appearance-based",
 		webPreferences: {
@@ -28,7 +29,7 @@ function init() {
 	win.webContents.once("dom-ready", () => {
 		win.setMenu(null)
 		if (process.platform !== "darwin") {
-			win.setBackgroundColor("#FFFFFF")
+			win.openDevTools()	
 		}
 		win.show()
 	})
