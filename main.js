@@ -28,9 +28,6 @@ function init() {
 	
 	win.webContents.once("dom-ready", () => {
 		win.setMenu(null)
-		if (process.platform !== "darwin") {
-			win.openDevTools()	
-		}
 		win.show()
 	})
 }
