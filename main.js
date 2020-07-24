@@ -12,7 +12,6 @@ function init() {
 		transparent: true,
 		maximizable: false,
 		fullscreenable: false,
-		icon: "icons/icon.png",
 		titleBarStyle: "hiddenInset",
 		vibrancy: "appearance-based",
 		webPreferences: {

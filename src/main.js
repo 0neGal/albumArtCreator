@@ -4,7 +4,7 @@ var $ = document;
 const fs = require('fs');
 var console = require("console");
 var htmlToImg = require("save-html-as-image");
-const { dialog, shell } = require("electron").remote;
+const { dialog, shell, app } = require("electron").remote;
 
 if (process.platform !== "darwin") {
 	drag.style.background = "var(--bg)";
@@ -32,7 +32,7 @@ function updateText() {
 
 function findBackgrounds() {
 	files = new Array;
-	fs.readdirSync("./src/backgrounds/").forEach((file) => {
+	fs.readdirSync(app.getAppPath() + "/src/backgrounds/").forEach((file) => {
 		if (file.indexOf(".png") !== -1) {
 			files.push(file)
 		}
