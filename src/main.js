@@ -243,12 +243,17 @@ let lastWhich;
 // And most people won't fuckin use this function anyway so whatever
 // Just please don't do it this way if you're trying to learn from my dogshit code.
 // Thanks.
-function randomize(boolean) {
-	let gradient = randomGradient()
+function randomize(boolean, opacity, boolean2) {
+	let grad = randomGradient()
 	if (boolean) {
-		art.style.backgroundImage = gradient;
-		artShadow.style.backgroundImage = gradient;
-		return;
+		// I still need to make sure this has a smooth transition
+		// I won't do that right now, future me will have to do that.
+		gradient.style.opacity = opacity;
+		gradient.style.backgroundImage = grad;
+		artShadow.style.backgroundImage = grad;
+		if (boolean2) {
+			return;
+		}
 	}
 
 	if (randomizing) {
@@ -288,8 +293,9 @@ function randomImage() {
 }
 
 function generateImage() {
+	randomize(true, Math.random()*(0.7-0.1)+0.1)
 	randomImage();
-	let sepia = Math.random()*(1-0.2)+0.2;
+	let sepia = Math.random()*(0.5-0.2)+0.2;
 	let saturation = Math.random()*(100-70)+70;
 	
 	setTimeout(() => {
@@ -317,7 +323,21 @@ function randomGradient() {
 }
 
 // This is unnecessary but I don't care...
-// It makes the HTML code look cleaner :p
+// It makes the HTML look cleaner :p
 function openLink(url) {
 	shell.openExternal(url)
+}
+
+function toggleLogo() {
+	if (logoToggle.classList.value.includes("toggled")) {
+		appleLogo.style.left = "20px";
+		appleLogo.style.opacity = "0.0";
+		logoToggle.classList.remove("toggled");
+		appleLogo.style.transform = "scale(0.9)";
+	} else {
+		appleLogo.style.left = "calc(25px * var(--sizefactor))";
+		appleLogo.style.opacity = "1.0";
+		logoToggle.classList.add("toggled");
+		appleLogo.style.transform = "scale(1.0)";
+	}
 }

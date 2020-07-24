@@ -17,6 +17,7 @@
 		<div id="artShadow"></div>
 		<div id="artDiv">
 			<div id="art" onclick="chooseImage()">
+				<div id="gradient"></div>
 				<div id="appleLogo"></div>
 				<div id="bigTitle">Big Title</div>
 				<div id="subTitle">Sub Title</div>
@@ -27,7 +28,7 @@
 		<div class="box" id="backgrounds">
 		</div>
 		<div class="input">
-			<input disabled value="Show Apple Logo">
+			<input disabled value="Show Apple Logo"><div onclick="toggleLogo()" id="logoToggle" class="toggle toggled">X</div></input>
 		</div>
 		<div class="input">
 			<input id="bigTitleInput" placeholder="Big Title..." value="Big Title">
@@ -39,11 +40,11 @@
 			<input id="subTextInput" placeholder="Sub Text..." value="Sub Text">
 		</div>
 		
-		<div class="button" id="generate" onclick="generateImage()">Generate Random Background</div>'
-		<div class="button" id="randomize" onclick="randomize(true)">Generate Random Gradient</div>
+		<div class="button" id="generate" onclick="randomize(true, Math.random()*(0.7-0.1)+0.1, true)">Generate Random Background</div>
+		<div class="button" id="randomize" onclick="randomize(true, '1.0')">Generate Random Gradient</div>
 		<div class="button" id="generate" onclick="chooseImage()">Choose your own background</div>
 		<div class="button" id="generate" onclick="generate()">Generate</div>
-		<div class="button" id="randomize" onclick="randomize()">Randomize</div>
+		<div class="button" id="randomize" onclick="randomize(true, Math.random()*(0.7-0.1)+0.1)">Randomize</div>
 		
 		<div id="smolBtns">
 			<div class="smolBtn" onclick="openLink('https://twitter.com/0neGuyDev')">Twitter</div>

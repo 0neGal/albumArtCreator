@@ -114,6 +114,29 @@ body {
 	transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out, 0.3s border ease-in-out, 0.3s box-shadow ease-in-out, 0.3s background ease-in-out;
 }
 
+.toggle {
+	top: -50px;
+	left: 250px;
+	width: 30px;
+	height: 30px;
+	font-weight: 700;
+	border-radius:5px;
+	line-height: 30px;
+	color:transparent;
+	text-align: center;
+	position: relative;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	background: transparent;
+	-webkit-user-select: none;
+	transition: 0.3s color ease-in-out;
+	border: 5px solid var(--activecolor);
+}
+
+.toggle.toggled {
+	color: var(--activecolor);
+}
+
 .box {
 	height: 40vw;
 	display: flex;
@@ -288,6 +311,7 @@ body {
 	left: calc(25px * var(--sizefactor));
 	width: calc(65px * var(--sizefactor));
 	height: calc(25px * var(--sizefactor));
+	transition: 0.3s opacity ease-in-out, 0.3s transform ease-in-out, 0.3s left ease-in-out;
 }
 
 #art img {
@@ -336,4 +360,9 @@ canvas {
 	text-align: center;
 	color: var(--textcolor);
 	transition: 0.3s color ease-in-out;
+}
+
+#gradient {
+	width: var(--artsize);
+	height: var(--artsize);
 }
