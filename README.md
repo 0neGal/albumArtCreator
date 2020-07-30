@@ -16,7 +16,7 @@ Head over to the [releases page](https://github.com/0neGuyDev/albumArtCreator/re
 
 **Where's the Windows release?**
 
-I don't have a Windows machine currently, if somebody is able to compile it, on their machine you can contact me on [Twitter](https://twitter.com/0neGuyDev) and send it, I'll add it.
+I don't have a Windows machine currently, some releases may not yet have a Windows build. If there's a current release that doesn't have a build I'd love it if you could compile it for me and send it to me!
 
 ### My Album Art doesn't show up for other people
 
