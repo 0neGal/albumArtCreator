@@ -2,7 +2,6 @@
 
 var $ = document;
 const fs = require('fs');
-var console = require("console");
 var htmlToImg = require("save-html-as-image");
 const { dialog, shell, app } = require("electron").remote;
 
