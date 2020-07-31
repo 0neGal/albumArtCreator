@@ -96,6 +96,10 @@ function setVariable(variable, value) {
 }
 
 function setAlbum(url) {
+	if (process.platform === "win32") {
+		url = url.replace(/\\/g, "/")
+	}
+
 	gradient.style.opacity = "0.0";
 	artShadow.style.opacity = "0.0";
 	artShadow.style.backgroundImage = "";
