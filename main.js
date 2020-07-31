@@ -28,7 +28,6 @@ function init() {
 	win.webContents.once("dom-ready", () => {
 		win.setMenu(null)
 		win.show()
-		win.openDevTools()
 	})
 }
 
