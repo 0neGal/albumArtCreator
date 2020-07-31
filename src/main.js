@@ -43,7 +43,7 @@ function findBackgrounds() {
 	// But it's good enough.
 	backgrounds.innerHTML = "";
 	for (let i = 0; i < files.length; i++) {
-		backgrounds.innerHTML += `<div onclick="setAlbum('backgrounds/${files[i]}')" class="image" class="image" style="background-image:url("backgrounds/${files[i]}") !important"></div>`;
+		backgrounds.innerHTML += `<div onclick="setAlbum('backgrounds/${files[i]}')" class="image" class="image" style="background-image:url(backgrounds/${files[i]}) !important"></div>`;
 	}
 	setAlbum("backgrounds/" + files[0])
 }; findBackgrounds()
@@ -57,7 +57,7 @@ async function generate() {
 		generating.style.transform = "scale(1.0)";
 		
 		await htmlToImg.saveAsPng(art, {forceFixText: true, filename: getFileName(), printDate: false})
-		
+
 		drag.style.zIndex = "-1";
 		generating.style.opacity = "0.0";
 		generating.style.transform = "scale(0.9)";
@@ -97,16 +97,18 @@ function setVariable(variable, value) {
 }
 
 function setAlbum(url) {
+	gradient.style.opacity = "0.0";
 	artShadow.style.opacity = "0.0";
+	artShadow.style.backgroundImage = "";
 	artDiv.style.transform = "scale(1.03)";
 	art.style.backgroundImage = `url("${url}")`;
 	art.style.filter = "";
-	artShadow.style.filter = "blur(calc(var(--shadowamount - 1px)";
+	artShadow.style.filter = "blur(calc(var(--shadowamount - 1px))";
 	setTimeout(() => {
 		artShadow.style.opacity = "1.0";
 		setVariable("artbg", `url("${url}")`);
 		artDiv.style.transform = "scale(1.0)";
-		artShadow.style.filter = "blur(var(--shadowamount)";
+		artShadow.style.filter = "blur(var(--shadowamount))";
 	}, 300);
 }
 

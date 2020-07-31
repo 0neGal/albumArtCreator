@@ -92,8 +92,8 @@ body {
 	width: var(--artsize);
 	height: var(--artsize);
 	background-size: cover;
-	background: var(--artbg);
 	background-position: center;
+	background-image: var(--artbg);
 	top:calc(var(--topinset) + 30px);
 	filter: blur(var(--shadowamount));
 	margin-left: calc(50vw - var(--artsize)/2);
