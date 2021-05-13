@@ -12,7 +12,7 @@ Album Art Creator is an app that takes your input and sends out an output album 
 
 ### How to use?
 
-Head over to the [releases page](https://github.com/0neGuyDev/albumArtCreator/releases) and download the tar file of your OS, then unzip it, macOS can do this natively iirc, unsure about Windows, most Linux distros will have the `tar` command pre-installed, use the `-x` option to extract it.
+Head over to the [releases page](https://github.com/0neGal/albumArtCreator/releases) and download the tar file of your OS, then unzip it, macOS can do this natively iirc, unsure about Windows, most Linux distros will have the `tar` command pre-installed, use the `-x` option to extract it.
 
 **Where's the Windows release?**
 
@@ -36,8 +36,4 @@ I don't have much planned other than a few small features and probably some bug 
 
 ### Oi, I FOUND A BUG!
 
-That's cool, very cool! However it shouldn't be there! Be sure to report a detailed report on the [issues page](https://github.com/0neGuyDev/albumArtCreator/issues), I haven't set up a template yet so just try to be descriptive, say how it is produced etc etc...
-
-### This looks awesome I wanna donate to you!
-
-That's cool and all that you feel you don't need your precious money, if you really feel I deserve some of it there's a donate button inside the app or you can use this [link](https://paypal.me/0neGuyDev)
+That's cool, very cool! However it shouldn't be there! Be sure to report a detailed report on the [issues page](https://github.com/0neGal/albumArtCreator/issues), I haven't set up a template yet so just try to be descriptive, say how it is produced etc etc...
